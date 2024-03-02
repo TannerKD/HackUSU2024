@@ -29,6 +29,8 @@ void loop()
         Serial.print(n);
         Serial.println(" networks found");
         Serial.println("Nr | SSID                             | RSSI | CH | Encryption");
+        int RSSIvals[n];
+        
         for (int i = 0; i < n; ++i) {
             // Print SSID and RSSI for each network found
             Serial.printf("%2d",i + 1);
