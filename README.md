@@ -4,6 +4,17 @@ This is the Git repository for the hardware competition of Hack USU 2024.
 Useful article to learn the implementation of the ESP32:
     https://randomnerdtutorials.com/getting-started-with-esp32/
 
+# Useful Links
+
+| Use | Link | Note |
+|----------|----------|----------|
+| ESP32   | https://randomnerdtutorials.com/getting-started-with-esp32/   | How to program the esp32   |
+| WiFi NAN specs   | https://device.report/m/980bcb4db0863da46c502ee7c16a63f7606467778fe73fac7ffabcd3cfa5d207.pdf   | May or may not be useful   |
+| Cell 7   | Cell 8   | Cell 9   |
+
+
+
+
 In order to program the ESP32 you can configure your arduino IDE:
 1. Press 'File' then go to 'Preferences'
 2. In the Preferences popup, type this in the prompt 'Additional Board Manager URLs:'
