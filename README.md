@@ -1,9 +1,6 @@
 # HackUSU2024
 This is the Git repository for the hardware competition of Hack USU 2024.
 
-Useful article to learn the implementation of the ESP32:
-    https://randomnerdtutorials.com/getting-started-with-esp32/
-
 # Useful Links
 
 | Use | Link | Note |
