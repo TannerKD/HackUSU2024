@@ -8,9 +8,17 @@
 int rssi[5];
 int thresh;
 
+int avg[5];
+int count;
+// how many cycles to setup baseline
+int setup_time=6;
+// how often to reset average
+int reset_time=200;
+
 void setup()
 {
     Serial.begin(115200);
+    count = 0;
 
     // Set WiFi to station mode and disconnect from an AP if it was previously connected.
     WiFi.mode(WIFI_STA);
@@ -26,7 +34,7 @@ void loop()
 
     // WiFi.scanNetworks will return the number of networks found.
     int n = WiFi.scanNetworks();
-    Serial.println("Scan done");
+    Serial.printf("Scan %d done \n", count);
     if (n == 0) {
         Serial.println("no networks found");
     } else {
@@ -50,6 +58,9 @@ void loop()
               Serial.printf("%d",node_id);
               Serial.println();
               rssi[node_id] = WiFi.RSSI(i);
+              if(count<setup_time){
+                avg[node_id] += rssi[node_id];
+              }
             }
             delay(10);
         }
@@ -63,7 +74,14 @@ void loop()
 
     // Delete the scan result to free memory for code below.
     WiFi.scanDelete();
-
+    if(count == setup_time-1){
+      for(int i=0;i<5;i++){
+        avg[i]=avg[i]/setup_time;
+        Serial.printf("Avg %d: ", i);
+        Serial.printf("%d ", avg[i]);
+      }
+    }
+    count == reset_time ? count=0: count++;
 }
 
 String slice(String myString, int startBit,int endBit){
@@ -76,10 +94,6 @@ String slice(String myString, int startBit,int endBit){
   return extractedBits;
 }
 
-int average(int[n] value){
-  
-}
+// void turn_led_on_weakest(){
 
-void turn_led_on_weakest(){
-
-}
+// }
