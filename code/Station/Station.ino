@@ -32,8 +32,8 @@ void loop() {
 
     // Read data from the server
     while (client.available()) {
-      Serial.println("test");
-      Serial.println(client.read());
+      String line = client.readStringUntil('\r');
+      Serial.print(line);
     }
 
     // Close the connection
