@@ -15,6 +15,12 @@ int setup_time=10;
 // how often to reset average
 int reset_time=200;
 
+WiFiClient localClient;
+
+const uint port = 80;
+const char* ip = "192.168.4.1";
+const char* password = "HACKUSU1";
+
 void setup()
 {
     Serial.begin(115200);
@@ -30,6 +36,7 @@ void setup()
 
 void loop()
 {
+    delay(100);
     Serial.println("Scan start");
 
     // WiFi.scanNetworks will return the number of networks found.
@@ -42,15 +49,7 @@ void loop()
         Serial.println(" networks found");
         Serial.println("Nr | SSID                             | RSSI | CH | Encryption");
         for (int i = 0; i < n; ++i) {
-            // Print SSID and RSSI for each network found
-            // Serial.printf("%2d",i + 1);
-            // Serial.print(" | ");
-            // Serial.printf("%-32.32s", WiFi.SSID(i).c_str());
-            // Serial.print(" | ");
-            // Serial.printf("%4d", WiFi.RSSI(i));
-            // Serial.print(" | ");
-            // Serial.printf("%2d", WiFi.channel(i));
-            // Serial.print(" | ");
+            //helps avoid false positives
             int node_id=100;
             if(slice(WiFi.SSID(i).c_str(),0,4)=="Node_"){
               Serial.printf("found %-32.32s", WiFi.SSID(i).c_str());
@@ -81,6 +80,7 @@ void loop()
         Serial.printf("%d ", avg[i]);
       }
     }
+     weakest();
     count == reset_time ? count=0: count++;
 }
 
@@ -94,6 +94,65 @@ String slice(String myString, int startBit,int endBit){
   return extractedBits;
 }
 
-// void turn_led_on_weakest(){
+void weakest(){
+  int low=0;
+  for(int i=0;i<5;i++){
+      if(rssi[i]<rssi[low]){low=i;}
+  }
+  Serial.printf("lowest: %d", low);
+  turn_led_on_weakest(low);
+}
 
-// }
+void turn_led_on_weakest(int id){
+    char* ssid;
+    if(id==0){
+      ssid = "Node_0";
+    }
+    else if(id==1){
+      ssid = "Node_1";
+    }
+    else if(id==2){
+      ssid = "Node_2";
+    }
+    else if(id==3){
+      ssid = "Node_3";
+    }
+    else if(id==4){
+      ssid = "Node_4";
+    }
+    else{
+      return;
+    }
+    Serial.println(ssid);
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+    }
+    Serial.println(WiFi.localIP());
+    sendRequest();
+}
+
+void sendRequest() {
+
+  for(int a=0; a<5;a++){
+    if (localClient.connect(ip, port)) {                 // Establish a connection
+      if (localClient.connected()) {
+        localClient.println("GET /H");                      // send data
+        Serial.println("[Tx] GET /H");
+        delay(5000);
+        localClient.println("GET /L");
+        Serial.println("[Tx] GET /L");
+        delay(3000);
+        WiFi.disconnect();
+        Serial.println("Disconnecting from wifi");
+        return;
+      }
+    }
+    else{
+      Serial.printf("failed attepmt %d \n", a);
+    }
+ 
+  }
+  
+}
