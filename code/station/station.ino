@@ -45,5 +45,5 @@ void loop() {
   }
 
   // Wait before trying again
-  //delay(5000);
+  delay(5000);
 }
