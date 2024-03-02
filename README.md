@@ -10,6 +10,15 @@ This is the Git repository for the hardware competition of Hack USU 2024.
 |  ESP 32 WiFi lib  |  https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_wifi.html  | General library for WiFi with esp32 |
 | ESP 32 NAN Library   | https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_nan.html   | ESP32 Specific docs  |
 
+Acceptable Signal Strengths
+
+| Signal Strength | Strength |
+| -30 dBm | Amazing - Max achievable signal strength. Not ordinary or what you really want |
+| -67 dBm | Very Good - Minimum signal strength for applications that require very reliable, timely delivery of data packets. |
+| -70 dBm | Okay - Minimum signal strength for reliable packet delivery |
+| -80 dBm | Not Good - Minimum signal strength for basic connectivity. Packet delivery may be unreliable. |
+| -90 dBm | Unusable - Approaching or drowning in the noise floor. Funcionality unlikely |
+
 Useful Definitions:
 NAN - Neighborhood Awareness Network
 AP - Access Point
