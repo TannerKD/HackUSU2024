@@ -32,7 +32,8 @@ void loop() {
 
     // Read data from the server
     while (client.available()) {
-      Serial.write(client.read());
+      Serial.println("test");
+      Serial.println(client.read());
     }
 
     // Close the connection
@@ -44,5 +45,5 @@ void loop() {
   }
 
   // Wait before trying again
-  delay(5000);
+  //delay(5000);
 }

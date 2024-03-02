@@ -2,8 +2,8 @@
 #include <WiFiClient.h>
 #include <WiFiServer.h>
 
-const char *ssid = "YourSSID";     // Change to your desired SSID
-const char *password = "YourPassword"; // Change to your desired password
+const char *ssid = "YourSSID";       // Change to your desired SSID
+const char *password = "YourPassword";   // Change to your desired password
 WiFiServer server(80);
 
 void setup() {
@@ -26,10 +26,24 @@ void loop() {
     Serial.println("Client connected");
 
     // Send data to the client
-    client.print("Hello from ESP32 AP");
+    if (sendDataToClient(client)) {
+      Serial.println("Data sent successfully");
+    } else {
+      Serial.println("Failed to send data");
+    }
 
     // Close the connection
     client.stop();
     Serial.println("Client disconnected");
   }
+}
+
+bool sendDataToClient(WiFiClient client) {
+  // Send data to the client
+  const char *dataToSend = "Hello from ESP32 AP";
+  size_t dataSize = strlen(dataToSend);
+  size_t bytesSent = client.write((const uint8_t *)dataToSend, dataSize);
+  
+  // Check if all data was sent successfully
+  return bytesSent == dataSize;
 }
