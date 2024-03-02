@@ -11,7 +11,7 @@ int thresh;
 int avg[5];
 int count;
 // how many cycles to setup baseline
-int setup_time=6;
+int setup_time=10;
 // how often to reset average
 int reset_time=200;
 
