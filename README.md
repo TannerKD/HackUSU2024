@@ -10,6 +10,13 @@ This is the Git repository for the hardware competition of Hack USU 2024.
 |  ESP 32 WiFi lib  |  https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_wifi.html  | General library for WiFi with esp32 |
 | ESP 32 NAN Library   | https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_nan.html   | ESP32 Specific docs  |
 
+Useful Definitions:
+NAN - Neighborhood Awareness Network
+AP - Access Point
+NDL - NAN Device Link
+CRB - Common Resource Block
+NDP - NAN Device Pair
+NDC - NAN Data Cluster
 
 
 
