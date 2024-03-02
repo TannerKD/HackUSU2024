@@ -6,8 +6,8 @@ This is the Git repository for the hardware competition of Hack USU 2024.
 | Use | Link | Note |
 |----------|----------|----------|
 | ESP32   | https://randomnerdtutorials.com/getting-started-with-esp32/   | How to program the esp32   |
-| WiFi NAN specs   | https://device.report/m/980bcb4db0863da46c502ee7c16a63f7606467778fe73fac7ffabcd3cfa5d207.pdf   | May or may not be useful   |
-| Cell 7   | Cell 8   | Cell 9   |
+| WiFi NAN specs   | https://device.report/m/980bcb4db0863da46c502ee7c16a63f7606467778fe73fac7ffabcd3cfa5d207.pdf   | Nan Specification   |
+| ESP 32 NAN Library   | https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_nan.html   | ESP32 Specific docs  |
 
 
 
