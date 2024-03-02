@@ -2,7 +2,7 @@
 This is the Git repository for the hardware competition of Hack USU 2024.
 
 # Description
-A method for tracking movement was created using six ESP32 boards configured in a grid pattern within a room. A single master node receives and interprets wifi signals from five slave nodes; these signals are interrupted when a body is placed in the way of the signal.
+A method for tracking movement was created using six ESP32 boards configured in a grid pattern within a room. A single master node receives and interprets wifi signals from five slave nodes; these signals are interrupted when a body is placed in the way of the signal. Code is included within the 'Code' folder.
 
 # Resources
 
