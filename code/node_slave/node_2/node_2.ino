@@ -19,7 +19,7 @@
 
 // Set these to your desired credentials.
 const char *ssid = "Node_2";
-const char *password = "HACKUSU";
+const char *password = "HACKUSU1";
 
 WiFiServer server(80);
 
