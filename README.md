@@ -13,7 +13,7 @@ Useful article to learn the implementation of the ESP32:
 | Cell 7   | Cell 8   | Cell 9   |
 
 
-
+I have no clue what I am doing
 
 In order to program the ESP32 you can configure your arduino IDE:
 1. Press 'File' then go to 'Preferences'
