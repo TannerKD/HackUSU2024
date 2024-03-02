@@ -13,6 +13,7 @@ This is the Git repository for the hardware competition of Hack USU 2024.
 # Acceptable Signal Strengths
 
 | Signal Strength | Strength |
+|------------|---------|
 | -30 dBm | Amazing - Max achievable signal strength. Not ordinary or what you really want |
 | -67 dBm | Very Good - Minimum signal strength for applications that require very reliable, timely delivery of data packets. |
 | -70 dBm | Okay - Minimum signal strength for reliable packet delivery |
