@@ -18,7 +18,7 @@
 #define LED_BUILTIN 2   // Set the GPIO pin where you connected your test LED or comment this line out if your dev board has a built-in LED
 
 // Set x to be the number of the node
-const char *ssid = "nodex";
+const char *ssid = "node0";
 const char *password = "1234567";
 
 WiFiServer server(80);
