@@ -1,7 +1,10 @@
 # HackUSU2024
 This is the Git repository for the hardware competition of Hack USU 2024.
 
-# Useful Links
+# Description
+A method for tracking movement was created using six ESP32 boards configured in a grid pattern within a room. A single master node receives and interprets wifi signals from five slave nodes; these signals are interrupted when a body is placed in the way of the signal.
+
+# Resources
 
 | Use | Link | Note |
 |----------|----------|----------|
@@ -19,15 +22,6 @@ This is the Git repository for the hardware competition of Hack USU 2024.
 | -70 dBm | Okay - Minimum signal strength for reliable packet delivery |
 | -80 dBm | Not Good - Minimum signal strength for basic connectivity. Packet delivery may be unreliable. |
 | -90 dBm | Unusable - Approaching or drowning in the noise floor. Funcionality unlikely |
-
-Useful Definitions:
-NAN - Neighborhood Awareness Network
-AP - Access Point
-NDL - NAN Device Link
-CRB - Common Resource Block
-NDP - NAN Device Pair
-NDC - NAN Data Cluster
-
 
 
 In order to program the ESP32 you can configure your arduino IDE:
