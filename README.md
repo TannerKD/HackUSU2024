@@ -10,7 +10,7 @@ This is the Git repository for the hardware competition of Hack USU 2024.
 |  ESP 32 WiFi lib  |  https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_wifi.html  | General library for WiFi with esp32 |
 | ESP 32 NAN Library   | https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_nan.html   | ESP32 Specific docs  |
 
-Acceptable Signal Strengths
+# Acceptable Signal Strengths
 
 | Signal Strength | Strength |
 | -30 dBm | Amazing - Max achievable signal strength. Not ordinary or what you really want |
